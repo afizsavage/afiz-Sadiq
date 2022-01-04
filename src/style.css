@@ -83,6 +83,14 @@ main {
   border-radius: 0.28571429rem;
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
   margin-top: 2rem;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease, transform 0.1s ease,
+    -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1px 3px 0 #bcbdbd, 0 0 0 1px #d4d4d5;
 }
 
 .meal-name {
@@ -100,6 +108,31 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 1rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.cmtbtn-sec {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.cmtbtn-sec button {
+  background-color: orange;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  border: #fff 2px solid;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.cmtbtn-sec button:hover {
+  background-color: white;
+  border: orange 2px solid;
+  color: orange;
+  transition: background-color 0.5s ease;
 }
 
 .like-icon {

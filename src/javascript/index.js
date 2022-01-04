@@ -18,7 +18,8 @@ const displayMeals = (meals) => {
   let listItems = '';
   meals.meals.forEach((meal) => {
     listItems += `<li><div class="card"> <img class='card-image' src=${meal.strMealThumb} alt=${meal.strMeal}/>
-    <div class='card-header'><span class='meal-name'>${meal.strMeal}</span> <span><button class='like-icon' type='button'></button></span></div> </div></li>`;
+    <div class='card-header'><span class='meal-name'>${meal.strMeal}</span> <span><button class='like-icon' type='button'></button></span></div>
+     <div class='cmtbtn-sec'><button type='button'>Comments</button></div> </div></li>`;
     listContainer.innerHTML = listItems;
   });
   console.log(meals.meals[0]);
