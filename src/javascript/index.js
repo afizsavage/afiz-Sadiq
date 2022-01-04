@@ -6,7 +6,7 @@ logo.src = Logo;
 
 const fetchMeals = async () => {
   const response = await fetch(
-    'https://themealdb.com/api/json/v1/1/search.php?f=a'
+    'https://themealdb.com/api/json/v1/1/search.php?f=m'
   );
   const meals = await response.json();
   return meals;

@@ -66,19 +66,23 @@ nav a.nt-meals {
 
 main {
   height: auto;
-  padding: 10rem 14rem;
+  padding: 5rem 14rem;
+  padding-bottom: 10rem;
 }
 
 #items-list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   height: auto;
 }
 
 .card {
-  width: 400px;
+  width: 420px;
   border: none;
   border-radius: 0.28571429rem;
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  margin-top: 2rem;
 }
 
 .meal-name {
