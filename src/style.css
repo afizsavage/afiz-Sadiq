@@ -35,7 +35,7 @@ header {
   height: 100px;
 }
 
-nav ul {
+ul {
   list-style: none;
 }
 
@@ -47,10 +47,12 @@ nav li {
 nav a {
   color: black;
   display: inline;
+  font-weight: 600;
 }
 
 nav a.nt-meals {
   text-decoration: none;
+  font-weight: 400;
 }
 
 .footer {
@@ -60,6 +62,49 @@ nav a.nt-meals {
   padding: 1.3rem 0;
   position: absolute;
   bottom: 0;
+}
+
+main {
+  height: auto;
+  padding: 10rem 14rem;
+}
+
+#items-list {
+  display: flex;
+  height: auto;
+}
+
+.card {
+  width: 400px;
+  border: none;
+  border-radius: 0.28571429rem;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+.meal-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+
+.like-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: #fff url('./assets/003-heart-2.png') center center no-repeat;
+  background-size: 1.4rem 1.4rem;
+  border: none;
+  cursor: pointer;
 }
 
 footer a {
