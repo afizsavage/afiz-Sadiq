@@ -15,7 +15,7 @@ header {
   font-size: 1.5rem;
   align-items: center;
   background: #f5f1da;
-  padding: 0 8rem;
+  padding: 0 15rem;
   color: black;
 }
 
@@ -23,7 +23,7 @@ header {
   display: inline-block;
   width: auto;
   height: auto;
-  padding-right: 3rem;
+  padding-right: 7rem;
 }
 
 #logo-link img {
@@ -31,6 +31,16 @@ header {
   height: 100px;
 }
 
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+  margin-right: 2rem;
+}
+
 nav a {
   color: black;
+  display: inline;
 }
