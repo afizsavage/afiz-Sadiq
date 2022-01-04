@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "javascript-capstone",
   "dependencies": {
-    "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -41,6 +40,10 @@
   },
   "homepage": "https://github.com/afizsavage/javascript-capstone#readme",
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.4.2",
     "hint": "^6.1.9"
   }
 }
