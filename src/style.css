@@ -11,3 +11,8 @@ body {
 h1 {
   font-family: 'Noto Serif', serif;
 }
+
+.footer {
+  text-align: center;
+  padding: 99px;
+}
