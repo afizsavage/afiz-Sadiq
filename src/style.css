@@ -35,7 +35,7 @@ header {
   height: 100px;
 }
 
-nav ul {
+ul {
   list-style: none;
 }
 
@@ -47,10 +47,12 @@ nav li {
 nav a {
   color: black;
   display: inline;
+  font-weight: 600;
 }
 
 nav a.nt-meals {
   text-decoration: none;
+  font-weight: 400;
 }
 
 .footer {
@@ -60,6 +62,89 @@ nav a.nt-meals {
   padding: 1.3rem 0;
   position: absolute;
   bottom: 0;
+}
+
+main {
+  height: auto;
+  padding: 5rem 14rem;
+  padding-bottom: 10rem;
+}
+
+#items-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto;
+}
+
+.card {
+  width: 420px;
+  border: none;
+  border-radius: 0.28571429rem;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition:
+    box-shadow 0.1s ease,
+    transform 0.1s ease,
+    -webkit-box-shadow 0.1s ease,
+    -webkit-transform 0.1s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1px 3px 0 #bcbdbd, 0 0 0 1px #d4d4d5;
+}
+
+.meal-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.cmtbtn-sec {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.cmtbtn-sec button {
+  background-color: orange;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  border: #fff 2px solid;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.cmtbtn-sec button:hover {
+  background-color: white;
+  border: orange 2px solid;
+  color: orange;
+  transition: background-color 0.5s ease;
+}
+
+.like-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: #fff url('./assets/003-heart-2.png') center center no-repeat;
+  background-size: 1.4rem 1.4rem;
+  border: none;
+  cursor: pointer;
 }
 
 footer a {
