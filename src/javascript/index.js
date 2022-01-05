@@ -16,13 +16,19 @@ const displayMeals = (meals) => {
   const listContainer = document.getElementById('items-list');
 
   let listItems = '';
+  let buttons;
   meals.meals.forEach((meal) => {
     listItems += `<li><div class="card"> <img class='card-image' src=${meal.strMealThumb} alt=${meal.strMeal}/>
     <div class='card-header'><span class='meal-name'>${meal.strMeal}</span> <span><button class='like-icon' type='button'></button></span></div>
-     <div class='cmtbtn-sec'><button type='button'>Comments</button></div> </div></li>`;
+    <div class='cmtbtn-sec'><button type='button'>Comments</button></div> </div></li>`;
     listContainer.innerHTML = listItems;
   });
-  console.log(meals.meals[0]);
+  buttons = document.querySelectorAll('.cmtbtn-sec > button');
+  buttons.forEach((button) =>{
+    button.addEventListener('click',() => {
+      console.log('click');
+    });
+  });
 };
 
 const load = () => {
@@ -32,3 +38,5 @@ const load = () => {
 };
 
 window.onload = load;
+
+const popup = document.getElementById(popup);
