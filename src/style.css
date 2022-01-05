@@ -111,13 +111,13 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 1rem 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 .cmtbtn-sec {
   display: flex;
   justify-content: center;
   padding: 1rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .cmtbtn-sec button {
@@ -145,6 +145,14 @@ main {
   background-size: 1.4rem 1.4rem;
   border: none;
   cursor: pointer;
+}
+
+.like-cont {
+  padding: 0.5rem 1rem;
+  text-align: right;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.85);
 }
 
 footer a {
