@@ -1,12 +1,12 @@
 import '../style.css';
 import Logo from '../assets/A & S-logos_transparent.png';
 
-const mealsAPI = 'https://themealdb.com/api/json/v1/1/search.php?f=f';
-const involvementApi =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PkMZGTl9u9KsKd12uG0G/likes';
+import { mealsAPI, involvementBaseApi } from './utils';
+import updateNubmerOfLikes from './likes';
 
 const logo = document.querySelector('img');
 logo.src = Logo;
+let likeBtns;
 
 const mealsArray = [];
 
@@ -17,7 +17,7 @@ const fetchMeals = async () => {
 };
 
 const fetchLikes = async () => {
-  const response = await fetch(involvementApi);
+  const response = await fetch(`${involvementBaseApi}likes`);
   const likes = await response.json();
   return likes;
 };
@@ -35,14 +35,21 @@ const displayMeals = (likes, meals) => {
   meals.forEach((meal, index) => {
     meal.likes = likes[index].likes;
   });
-  console.log(meals);
 
   meals.forEach((meal) => {
     listItems += `<li><div class="card"> <img class='card-image' src=${meal.strMealThumb} alt=${meal.strMeal}/>
-    <div class='card-header'><span class='meal-name'>${meal.strMeal}</span> <span><button class='like-icon' type='button'></button></span></div>
+    <div class='card-header'><span class='meal-name'>${meal.strMeal}</span> <span><button id=${meal.idMeal} class='like-icon' type='button'></button></span></div>
     <div class='like-cont'> <span>${meal.likes} Likes</span></div>
      <div class='cmtbtn-sec'><button type='button'>Comments</button></div> </div></li>`;
     listContainer.innerHTML = listItems;
+  });
+
+  likeBtns = document.querySelectorAll('.like-icon');
+  console.log(likeBtns);
+  likeBtns.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      updateNubmerOfLikes(button.id);
+    });
   });
 };
 
