@@ -1,10 +1,5 @@
 import { involvementBaseApi } from './utils';
 
-export const fetchLikes = async () => {
-  const response = await fetch(`${involvementBaseApi}likes`);
-  const likes = await response.json();
-  return likes;
-};
 
 export const updateNubmerOfLikes = async (mealId) => {
   const response = await fetch(`${involvementBaseApi}likes`, {
