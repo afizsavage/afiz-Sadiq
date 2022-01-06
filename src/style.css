@@ -8,6 +8,7 @@ body {
   font-family: 'Lato', sans-serif;
   position: relative;
   font-size: 16px;
+  width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -19,7 +20,7 @@ header {
   font-size: 1.5rem;
   align-items: center;
   background: #f5f1da;
-  padding: 0 15rem;
+  padding: 0;
   color: black;
 }
 
@@ -50,7 +51,13 @@ nav a {
   font-weight: 600;
 }
 
+/* nav ul {
+  display: flex;
+  flex-direction: row;
+} */
+
 nav a.nt-meals {
+  display: none;
   text-decoration: none;
   font-weight: 400;
 }
@@ -66,19 +73,18 @@ nav a.nt-meals {
 
 main {
   height: auto;
-  padding: 5rem 14rem;
+  padding: 0 1rem;
   padding-bottom: 10rem;
 }
 
 #items-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   height: auto;
 }
 
 .card {
-  width: 420px;
+  width: 100%;
   border: none;
   border-radius: 0.28571429rem;
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
@@ -111,13 +117,13 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 1rem 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 .cmtbtn-sec {
   display: flex;
   justify-content: center;
   padding: 1rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .cmtbtn-sec button {
@@ -145,6 +151,19 @@ main {
   background-size: 1.4rem 1.4rem;
   border: none;
   cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.like-icon:active {
+  transform: translate(10px, -10px);
+}
+
+.like-cont {
+  padding: 0.5rem 1rem;
+  text-align: right;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.85);
 }
 
 #modal {
@@ -177,4 +196,32 @@ footer h2 {
 footer span {
   padding: 0 10px;
   font-size: 1.2rem;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 0 15rem;
+  }
+
+  nav a.nt-meals {
+    display: inline;
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  main {
+    padding: 5rem 14rem;
+    padding-bottom: 10rem;
+  }
+
+  #items-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 420px;
+    margin-top: 2rem;
+  }
 }
