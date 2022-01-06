@@ -71,6 +71,7 @@ const displayMeals = (likes, meals) => {
     meal.likes = likes[index].likes;
   });
 
+
   meals.forEach((meal) => {
     listItems += `<li><div class="card"> <img class='card-image' src=${meal.strMealThumb} alt=${meal.strMeal}/>
     <div class='card-header'><span class='meal-name'>${meal.strMeal}</span> <span><button id=${meal.idMeal} class='like-icon' type='button'></button></span></div>
@@ -89,8 +90,7 @@ const displayMeals = (likes, meals) => {
       updateLikeDyn(meals, button.id, event);
     });
   });
-
-
+};
 const load = () => {
   fetchMeals().then((meals) => {
     appendMealToMealsArray(meals);
@@ -99,6 +99,5 @@ const load = () => {
     displayMeals(likes, mealsArray);
   });
 };
-
 
 window.onload = load;
