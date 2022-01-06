@@ -35,6 +35,11 @@ header {
   padding-right: 7rem;
 }
 
+.top-sec img {
+  width: 100%;
+  height: 30rem;
+}
+
 #logo-link img {
   width: 100px;
   height: 100px;
@@ -152,7 +157,7 @@ main {
 .like-icon {
   width: 1.4rem;
   height: 1.4rem;
-  background:  url('./assets/003-heart-3.png') center center no-repeat;
+  background: url('./assets/003-heart-3.png') center center no-repeat;
   background-size: 1.4rem 1.4rem;
   border: none;
   cursor: pointer;
@@ -160,7 +165,7 @@ main {
 }
 
 .like-icon:hover {
-  background:  url('./assets/003-heart-2.png') center center no-repeat;
+  background: url('./assets/003-heart-2.png') center center no-repeat;
   background-size: 1.4rem 1.4rem;
 }
 
@@ -183,16 +188,18 @@ main {
   right: 0;
   bottom: 0;
   padding: 2rem 4rem;
-  background: linear-gradient(
-    0deg,
-    rgba(228, 198, 180, 0.95),
-    rgba(228, 198, 180, 0.95)
-  );
+  background:
+    linear-gradient(
+      0deg,
+      rgba(228, 198, 180, 0.95),
+      rgba(228, 198, 180, 0.95)
+    );
   backdrop-filter: blur(24px);
   box-sizing: border-box;
   z-index: 100;
   overflow-y: scroll;
 }
+
 #modal-icon {
   width: 2rem;
   height: 2rem;
@@ -204,6 +211,7 @@ main {
   border: none;
   cursor: pointer;
 }
+
 article {
   position: relative;
   background: #fff;
@@ -214,10 +222,12 @@ article {
   flex-direction: column;
   align-items: center;
 }
+
 .top-sec {
   width: 65%;
   height: 15%;
 }
+
 .top-sec h3 {
   text-align: center;
   margin-top: 2rem;
@@ -225,10 +235,7 @@ article {
   font-weight: 700;
   font-size: 2rem;
 }
-.top-sec img {
-  width: 100%;
-  height: 30rem;
-}
+
 .cat,
 .ori {
   padding: 2rem 5rem;
