@@ -90,8 +90,11 @@ main {
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
   margin-top: 2rem;
   cursor: pointer;
-  transition: box-shadow 0.1s ease, transform 0.1s ease,
-    -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+  transition:
+    box-shadow 0.1s ease,
+    transform 0.1s ease,
+    -webkit-box-shadow 0.1s ease,
+    -webkit-transform 0.1s ease;
 }
 
 .card:hover {

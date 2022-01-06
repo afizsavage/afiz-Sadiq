@@ -2,7 +2,7 @@ import '../style.css';
 import Logo from '../assets/A & S-logos_transparent.png';
 
 import { mealsAPI, involvementBaseApi } from './utils';
-import { updateNubmerOfLikes, updateLikeDyn } from './likes';
+import { updateNubmerOfLikes, updateLikeDyn, fetchLikes } from './likes';
 
 const logo = document.querySelector('img');
 logo.src = Logo;
@@ -14,12 +14,6 @@ const fetchMeals = async () => {
   const response = await fetch(mealsAPI);
   const meals = await response.json();
   return meals;
-};
-
-const fetchLikes = async () => {
-  const response = await fetch(`${involvementBaseApi}likes`);
-  const likes = await response.json();
-  return likes;
 };
 
 const appendMealToMealsArray = (meals) => {
