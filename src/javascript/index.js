@@ -1,6 +1,6 @@
 import '../style.css';
 import Logo from '../assets/A & S-logos_transparent.png';
-import { mealsAPI, sumNumberOfMeals } from './utils';
+import { mealsAPI, sumNumberOfMeals, fetcher } from './utils';
 import { updateNubmerOfLikes, updateLikeDyn, fetchLikes } from './likes';
 const logo = document.querySelector('img');
 const counterText = document.getElementById('count');
@@ -19,6 +19,16 @@ const appendMealToMealsArray = (meals) => {
     mealsArray.push(meal);
   });
 };
+
+const displayComments = (comments, parentEle) => {
+  let listItems = '';
+  comments.forEach((comment) => {
+    listItems += `<li><span>${comment.creation_date}<span>
+    <span>${comment.username}:</span> <span>${comment.comment}</span></li>`;
+    parentEle.innerHTML = listItems;
+  });
+};
+
 const createDetailsPopup = (object) => {
   body.classList.add('disScroll');
   const modal = document.createElement('div');
@@ -27,15 +37,21 @@ const createDetailsPopup = (object) => {
   <button id='modal-icon'></button>
     <div class='top-sec'>
     <img src=${object.strMealThumb} />
-    <h3>${object.strMeal}</h3>
+    <h2>${object.strMeal}</h2>
     <div class='cat'><span>Category</span> <span>${object.strCategory}</span></div>
     <div class='ori'><span>Origin</span> <span>${object.strArea}</span></div>
     </div>
-    <div>
+    <div class='bottom-sec'>
+    <h3>Comments</h3>
+    <ul id='comments'></ul>
     </div>
   </article>`;
   modal.innerHTML = modalContent;
   mainSection.appendChild(modal);
+  const listElement = document.getElementById('comments');
+  fetcher(`comments?item_id=${object.idMeal}`).then((comments) => {
+    displayComments(comments, listElement);
+  });
   const closeButton = document.getElementById('modal-icon');
   closeButton.addEventListener('click', () => {
     body.classList.remove('disScroll');
@@ -77,7 +93,7 @@ const load = () => {
   fetchMeals().then((meals) => {
     appendMealToMealsArray(meals);
   });
-  fetchLikes().then((likes) => {
+  fetcher('likes').then((likes) => {
     displayMeals(likes, mealsArray);
   });
 };

@@ -221,19 +221,27 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .top-sec {
   width: 65%;
-  height: 15%;
+  height: auto;
 }
 
-.top-sec h3 {
+h3,
+h2 {
   text-align: center;
   margin-top: 2rem;
   color: rgba(0, 0, 0, 0.85);
   font-weight: 700;
   font-size: 2rem;
+}
+
+.bottom-sec h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .cat,
@@ -244,6 +252,22 @@ article {
   color: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: space-between;
+}
+
+footer span {
+  padding: 0 10px;
+  font-size: 1.2rem;
+}
+
+#comments li {
+  color: rgba(0, 0, 0, 0.85);
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#comments li span {
+  margin-right: 1rem;
 }
 
 footer a {
@@ -257,11 +281,6 @@ footer h2 {
   font-weight: 500;
   color: teal;
   margin-bottom: 0.5rem;
-}
-
-footer span {
-  padding: 0 10px;
-  font-size: 1.2rem;
 }
 
 @media (min-width: 992px) {
