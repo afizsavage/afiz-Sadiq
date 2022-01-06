@@ -5,6 +5,8 @@ import { mealsAPI, involvementBaseApi } from './utils';
 import { updateNubmerOfLikes, updateLikeDyn, fetchLikes } from './likes';
 
 const logo = document.querySelector('img');
+const counterText = document.getElementById('count');
+
 logo.src = Logo;
 let likeBtns;
 
@@ -22,9 +24,15 @@ const appendMealToMealsArray = (meals) => {
   });
 };
 
+const sumNumberOfMeals = (meals) => {
+  counterText.innerHTML = `Meals(${meals.length})`;
+};
+
 const displayMeals = (likes, meals) => {
   const listContainer = document.getElementById('items-list');
   let listItems = '';
+
+  sumNumberOfMeals(meals);
 
   meals.forEach((meal, index) => {
     meal.likes = likes[index].likes;
