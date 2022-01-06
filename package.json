@@ -9,7 +9,6 @@
     "eslint-plugin-import": "^2.25.4",
     "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
-    "jest": "^27.4.5",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -21,7 +20,7 @@
   },
   "public": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch": "webpack --watch",
     "server": "node server.js",
     "start": "webpack serve --open",
@@ -44,6 +43,7 @@
     "@babel/preset-env": "^7.16.4",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^27.4.2",
-    "hint": "^6.1.9"
+    "hint": "^6.1.9",
+    "jest": "^27.4.5"
   }
 }
