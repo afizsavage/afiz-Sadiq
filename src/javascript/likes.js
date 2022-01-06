@@ -1,6 +1,6 @@
 import { involvementBaseApi } from './utils';
 
-const updateNubmerOfLikes = async (mealId) => {
+export const updateNubmerOfLikes = async (mealId) => {
   const response = await fetch(`${involvementBaseApi}likes`, {
     method: 'POST',
     body: JSON.stringify({
@@ -10,8 +10,11 @@ const updateNubmerOfLikes = async (mealId) => {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
-  const resMsg = await response.json();
-  return resMsg;
 };
 
-export default updateNubmerOfLikes;
+export const updateLikeDyn = (meals, button, event) => {
+  const result = meals.filter((meal) => meal.idMeal === button);
+  result[0].likes++;
+  const totalLikes = result[0].likes;
+  event.target.parentElement.parentElement.nextElementSibling.innerHTML = `${totalLikes} Likes`;
+};

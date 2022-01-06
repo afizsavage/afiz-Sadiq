@@ -2,7 +2,7 @@ import '../style.css';
 import Logo from '../assets/A & S-logos_transparent.png';
 
 import { mealsAPI, involvementBaseApi } from './utils';
-import updateNubmerOfLikes from './likes';
+import { updateNubmerOfLikes, updateLikeDyn } from './likes';
 
 const logo = document.querySelector('img');
 logo.src = Logo;
@@ -45,10 +45,11 @@ const displayMeals = (likes, meals) => {
   });
 
   likeBtns = document.querySelectorAll('.like-icon');
-  console.log(likeBtns);
-  likeBtns.forEach((button, index) => {
-    button.addEventListener('click', () => {
+
+  likeBtns.forEach((button) => {
+    button.addEventListener('click', (event) => {
       updateNubmerOfLikes(button.id);
+      updateLikeDyn(meals, button.id, event);
     });
   });
 };
