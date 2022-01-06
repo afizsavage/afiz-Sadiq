@@ -1,7 +1,7 @@
 import '../style.css';
 import Logo from '../assets/A & S-logos_transparent.png';
 
-import { mealsAPI, involvementBaseApi } from './utils';
+import { mealsAPI, sumNumberOfMeals } from './utils';
 import { updateNubmerOfLikes, updateLikeDyn, fetchLikes } from './likes';
 
 const logo = document.querySelector('img');
@@ -24,15 +24,11 @@ const appendMealToMealsArray = (meals) => {
   });
 };
 
-const sumNumberOfMeals = (meals) => {
-  counterText.innerHTML = `Meals(${meals.length})`;
-};
-
 const displayMeals = (likes, meals) => {
   const listContainer = document.getElementById('items-list');
   let listItems = '';
 
-  sumNumberOfMeals(meals);
+  sumNumberOfMeals(meals, counterText);
 
   meals.forEach((meal, index) => {
     meal.likes = likes[index].likes;
