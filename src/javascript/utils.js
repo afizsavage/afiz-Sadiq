@@ -22,3 +22,7 @@ export const writeToAPI = async (reqBody, endpoint) => {
 export const sumNumberOfMeals = (meals, counterText) => {
   counterText.innerHTML = `Meals(${meals.length})`;
 };
+
+export const sumNumberOfComments = (comments, counterText) => {
+  counterText.innerHTML = `Comments(${comments.length})`;
+};
