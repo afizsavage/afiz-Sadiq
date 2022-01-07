@@ -1,6 +1,6 @@
 import '../style.css';
 import Logo from '../assets/A & S-logos_transparent.png';
-import { mealsAPI, sumNumberOfMeals, fetcher, writeToAPI } from './utils';
+import { mealsAPI, sumNumberOfMeals, fetcher, writeToAPI, sumNumberOfComments } from './utils';
 import { updateLikeDyn } from './likes';
 import { addComment } from './comments';
 
@@ -32,6 +32,7 @@ const displayComments = (comments, parentEle) => {
 };
 
 const createDetailsPopup = (object) => {
+  let sessionComments;
   const today = new Date();
   const dd = String(today.getDate()).padStart(2, '0');
   const mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -80,8 +81,11 @@ const createDetailsPopup = (object) => {
   const name = document.getElementById('name');
   const comment = document.getElementById('message');
   const listElement = document.getElementById('comments');
+  const commentHeading = document.querySelector('.bottom-sec h3');
   fetcher(`comments?item_id=${object.idMeal}`).then((comments) => {
+    sessionComments = comments.length;
     displayComments(comments, listElement);
+    sumNumberOfComments(comments, commentHeading);
   });
   const closeButton = document.getElementById('modal-icon');
   closeButton.addEventListener('click', () => {
@@ -89,11 +93,13 @@ const createDetailsPopup = (object) => {
     modal.remove();
   });
   submitButton.addEventListener('click', (event) => {
+    sessionComments = sessionComments + 1;
     const today = `${mm}-${dd}-${yyyy}`;
     event.preventDefault();
     addComment(object.idMeal, name.value, comment.value);
     listElement.innerHTML += `<li><span>${today}<span>
     <span>${name.value}:</span><span>${comment.value}</span></li>`;
+    commentHeading.innerHTML = `Comments(${sessionComments})`;
   });
 };
 const displayMeals = (likes, meals) => {
