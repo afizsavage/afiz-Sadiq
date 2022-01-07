@@ -136,7 +136,7 @@ main {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.cmtbtn-sec button {
+.button {
   background-color: orange;
   padding: 0.5rem 1rem;
   cursor: pointer;
@@ -147,7 +147,7 @@ main {
   border-radius: 5px;
 }
 
-.cmtbtn-sec button:hover {
+.button:hover {
   background-color: white;
   border: orange 2px solid;
   color: orange;
@@ -197,6 +197,9 @@ main {
   backdrop-filter: blur(24px);
   box-sizing: border-box;
   z-index: 100;
+  display: block;
+  justify-content: center;
+  min-height: 100vh;
   overflow-y: scroll;
 }
 
@@ -206,8 +209,8 @@ main {
   background: #fff url('../src/assets/001-close.png') center center no-repeat;
   background-size: 2rem 2rem;
   position: absolute;
-  right: 3rem;
-  top: 3rem;
+  right: 4rem;
+  top: 4rem;
   border: none;
   cursor: pointer;
 }
@@ -215,13 +218,14 @@ main {
 article {
   position: relative;
   background: #fff;
-  height: 100%;
+  height: auto;
   padding: 3rem 3rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
+  max-width: 85%;
+  margin: 4rem auto;
 }
 
 .top-sec {
@@ -230,7 +234,8 @@ article {
 }
 
 h3,
-h2 {
+h2,
+h4 {
   text-align: center;
   margin-top: 2rem;
   color: rgba(0, 0, 0, 0.85);
@@ -238,7 +243,8 @@ h2 {
   font-size: 2rem;
 }
 
-.bottom-sec h3 {
+.bottom-sec h3,
+h4 {
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -259,6 +265,10 @@ footer span {
   font-size: 1.2rem;
 }
 
+#comments {
+  margin-bottom: 1.5rem;
+}
+
 #comments li {
   color: rgba(0, 0, 0, 0.85);
   padding: 1rem 0;
@@ -268,6 +278,33 @@ footer span {
 
 #comments li span {
   margin-right: 1rem;
+}
+
+fieldset {
+  border: none;
+}
+
+.input-container {
+  margin: 2rem 0;
+}
+
+.input-container input,
+textarea {
+  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  padding: 0.5rem 0.3rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+#message {
+  width: 20rem;
+  height: 10rem;
+}
+
+#submit-btn {
+  margin-top: 2rem;
 }
 
 footer a {
