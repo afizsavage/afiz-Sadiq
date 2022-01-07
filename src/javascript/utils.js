@@ -9,6 +9,16 @@ export const fetcher = async (endpoint) => {
   return data;
 };
 
+export const writeToAPI = async (reqBody, endpoint) => {
+  const response = await fetch(`${involvementBaseApi}${endpoint}`, {
+    method: 'POST',
+    body: JSON.stringify(reqBody),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+};
+
 export const sumNumberOfMeals = (meals, counterText) => {
   counterText.innerHTML = `Meals(${meals.length})`;
 };
