@@ -60,11 +60,6 @@ nav a {
   font-weight: 600;
 }
 
-/* nav ul {
-  display: flex;
-  flex-direction: row;
-} */
-
 nav a.nt-meals {
   display: none;
   text-decoration: none;
@@ -99,11 +94,8 @@ main {
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
   margin-top: 2rem;
   cursor: pointer;
-  transition:
-    box-shadow 0.1s ease,
-    transform 0.1s ease,
-    -webkit-box-shadow 0.1s ease,
-    -webkit-transform 0.1s ease;
+  transition: box-shadow 0.1s ease, transform 0.1s ease,
+    -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
 }
 
 .card:hover {
@@ -187,13 +179,12 @@ main {
   top: 0;
   right: 0;
   bottom: 0;
-  padding: 2rem 4rem;
-  background:
-    linear-gradient(
-      0deg,
-      rgba(228, 198, 180, 0.95),
-      rgba(228, 198, 180, 0.95)
-    );
+  padding: 0.5rem 0.5rem;
+  background: linear-gradient(
+    0deg,
+    rgba(228, 198, 180, 0.95),
+    rgba(228, 198, 180, 0.95)
+  );
   backdrop-filter: blur(24px);
   box-sizing: border-box;
   z-index: 100;
@@ -219,7 +210,7 @@ article {
   position: relative;
   background: #fff;
   height: auto;
-  padding: 3rem 3rem;
+  padding: 1rem 1rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -345,5 +336,13 @@ footer h2 {
   .card {
     width: 420px;
     margin-top: 2rem;
+  }
+
+  #modal {
+    padding: 2rem 4rem;
+  }
+
+  article {
+    padding: 3rem 3rem;
   }
 }
