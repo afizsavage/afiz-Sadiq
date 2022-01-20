@@ -220,7 +220,7 @@ article {
 }
 
 .top-sec {
-  width: 65%;
+  width: 100%;
   height: auto;
 }
 
@@ -344,5 +344,9 @@ footer h2 {
 
   article {
     padding: 3rem 3rem;
+  }
+
+  .top-sec {
+    width: 65%;
   }
 }
