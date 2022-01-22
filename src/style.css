@@ -60,11 +60,6 @@ nav a {
   font-weight: 600;
 }
 
-/* nav ul {
-  display: flex;
-  flex-direction: row;
-} */
-
 nav a.nt-meals {
   display: none;
   text-decoration: none;
@@ -187,7 +182,7 @@ main {
   top: 0;
   right: 0;
   bottom: 0;
-  padding: 2rem 4rem;
+  padding: 0.5rem 0.5rem;
   background:
     linear-gradient(
       0deg,
@@ -219,17 +214,17 @@ article {
   position: relative;
   background: #fff;
   height: auto;
-  padding: 3rem 3rem;
+  padding: 1rem 1rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 85%;
-  margin: 4rem auto;
+  margin: 2rem auto;
 }
 
 .top-sec {
-  width: 65%;
+  width: 100%;
   height: auto;
 }
 
@@ -345,5 +340,18 @@ footer h2 {
   .card {
     width: 420px;
     margin-top: 2rem;
+  }
+
+  #modal {
+    padding: 2rem 4rem;
+  }
+
+  article {
+    padding: 3rem 3rem;
+    margin: 4rem auto;
+  }
+
+  .top-sec {
+    width: 65%;
   }
 }

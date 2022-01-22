@@ -12,6 +12,10 @@ Users can also like or comment on a dish.
 - CSS
 - Javascript
 
+## Live Demo
+
+- [Demo](https://afizsavage.github.io/javascript-capstone/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
