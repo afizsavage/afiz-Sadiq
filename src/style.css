@@ -94,8 +94,11 @@ main {
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
   margin-top: 2rem;
   cursor: pointer;
-  transition: box-shadow 0.1s ease, transform 0.1s ease,
-    -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+  transition:
+    box-shadow 0.1s ease,
+    transform 0.1s ease,
+    -webkit-box-shadow 0.1s ease,
+    -webkit-transform 0.1s ease;
 }
 
 .card:hover {
@@ -180,11 +183,12 @@ main {
   right: 0;
   bottom: 0;
   padding: 0.5rem 0.5rem;
-  background: linear-gradient(
-    0deg,
-    rgba(228, 198, 180, 0.95),
-    rgba(228, 198, 180, 0.95)
-  );
+  background:
+    linear-gradient(
+      0deg,
+      rgba(228, 198, 180, 0.95),
+      rgba(228, 198, 180, 0.95)
+    );
   backdrop-filter: blur(24px);
   box-sizing: border-box;
   z-index: 100;
