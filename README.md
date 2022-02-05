@@ -14,7 +14,7 @@ Users can also like or comment on a dish.
 
 ## Live Demo
 
-- [Demo](https://afizsavage.github.io/javascript-capstone/)
+- [Demo](https://afizsavage.github.io/afiz-Sadiq/)
 
 ## Getting Started
 
